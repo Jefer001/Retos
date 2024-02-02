@@ -15,9 +15,9 @@
         {
             for (int i = start; i <= end; i++)
             {
-                if (i % three == zero) Console.Write("Fizz");
+                if (i % three == zero && i % five == zero) Console.Write("Fiiz Buzz");
+                else if (i % three == zero) Console.Write("Fizz");
                 else if (i % five == zero) Console.Write("Buzz");
-                else if (i % three == zero && i % five == zero) Console.Write("Fiiz Buzz");
                 else Console.Write(i);
                 Console.WriteLine();
             }
