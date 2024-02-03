@@ -26,6 +26,7 @@ namespace NumPrimos
         #region Private methods
         private static bool IsPrime(int i)
         {
+            if (i < two) return false;
             for (int j = two; j < i; j++)
             {
                 if (i % j == zero) return false;
