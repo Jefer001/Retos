@@ -9,6 +9,6 @@
 using Polygon;
 using Polygon.Polygon;
 
-Console.WriteLine(Methods.Print(_ = new Rectangle(10,5)));
+Console.WriteLine(Methods.Print(_ = new Rectangle(10, 5)));
 Console.WriteLine(Methods.Print(_ = new Square(4)));
-Console.WriteLine(Methods.Print(_ = new Triangle(5,7)));
+Console.WriteLine(Methods.Print(_ = new Triangle(5, 7)));
