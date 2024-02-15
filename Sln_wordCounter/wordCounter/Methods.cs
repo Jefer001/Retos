@@ -4,7 +4,7 @@
     {
         public static void WordCounter(string str)
         {
-            string cleanStr = str.ToLower().Replace(",", "").Replace(".", "").Replace(",", "").Replace("?", "").Replace("¿", "");
+            string cleanStr = str.ToLower().Replace(",", "").Replace(".", "").Replace(";", "").Replace(":", "").Replace("?", "").Replace("¿", "");
             string[] words = cleanStr.Split(" ", StringSplitOptions.RemoveEmptyEntries);
 
             Dictionary<string, int> keyValuePairs = new();

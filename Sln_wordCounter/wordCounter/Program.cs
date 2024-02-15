@@ -11,4 +11,4 @@
 
 using wordCounter;
 
-Methods.WordCounter("Hola Hola Hola, Soy un un texto cualquiera...");
+Methods.WordCounter("Hola, mi nombre es Jeferson. Mi nombre completo es Jeferson Echavarria (Jefer001)....");
