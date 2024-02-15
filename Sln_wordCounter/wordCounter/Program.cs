@@ -9,4 +9,6 @@
  *   lo resuelvan automáticamente.
  */
 
-Console.WriteLine("Hello, World!");
+using wordCounter;
+
+Methods.WordCounter("Hola Hola Hola, Soy un un texto cualquiera...");
