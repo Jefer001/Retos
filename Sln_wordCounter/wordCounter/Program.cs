@@ -11,6 +11,5 @@
 
 using wordCounter;
 
-Methods methods = new();
-methods.ReceiveMsg("Hola, mi nombre es Jeferson. Mi nombre completo es Jeferson Echavarria (Jefer001)....");
+Methods methods = new("Hola, mi nombre es Jeferson. Mi nombre completo es Jeferson Echavarria (Jefer001)....");
 methods.Print();
