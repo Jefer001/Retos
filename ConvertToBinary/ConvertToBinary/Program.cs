@@ -8,4 +8,4 @@
 using ConvertToBinary;
 
 Methods methods = new();
-Console.WriteLine(methods.ConvertToTinary(12345));
+Console.WriteLine(methods.ConvertToBinary(12345));

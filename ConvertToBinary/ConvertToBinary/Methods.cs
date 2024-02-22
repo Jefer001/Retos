@@ -9,25 +9,25 @@
         #endregion
 
         #region Attributes
-        private long binario;
+        private long binary;
         #endregion
 
         #region Builder
         public Methods()
         {
-            binario = zero;
+            binary = zero;
         }
         #endregion
 
         #region Public methods
-        public long ConvertToTinary(int num)
+        public long ConvertToBinary(int num)
         {
             for (int i = num % div, j = zero; num > zero; num /= div, i = num % div, j++)
             {
                 long digito = i % div;
-                binario += digito * (long)Math.Pow(ten, j);
+                binary += digito * (long)Math.Pow(ten, j);
             }
-            return binario;
+            return binary;
         }
         #endregion
     }
