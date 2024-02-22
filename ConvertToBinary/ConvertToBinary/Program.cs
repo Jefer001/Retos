@@ -5,4 +5,7 @@
  * decimal a binario sin utilizar funciones propias del lenguaje que lo hagan directamente.
  */
 
-Console.WriteLine("Hello, World!");
+using ConvertToBinary;
+
+Methods methods = new();
+Console.WriteLine(methods.ConvertToTinary(12345));
