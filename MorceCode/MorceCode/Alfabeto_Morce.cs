@@ -1,17 +1,11 @@
-﻿namespace MorceCode
+﻿using System.Text;
+
+namespace MorceCode
 {
     public class Alfabeto_Morce
     {
         #region Attributes
         private static Dictionary<char, string>? morseAD;
-        private string txt;
-        #endregion
-
-        #region Builder
-        public Alfabeto_Morce()
-        {
-            txt = string.Empty;
-        }
         #endregion
 
         #region Private methods
@@ -68,6 +62,18 @@
         {
             if (!string.IsNullOrEmpty(str)) str = str.ToLower();
             return str;
+        }
+
+        private string Encode(string str)
+        {
+            StringBuilder sb = new();
+            foreach (char c in str)
+            {
+                if (morseAD.ContainsKey(c)) sb.Append(morseAD[c] + " ");
+                else if (c == ' ') sb.Append("/ ");
+                else sb.Append(c + " ");
+            }
+            return sb.ToString();
         }
         #endregion
     }
