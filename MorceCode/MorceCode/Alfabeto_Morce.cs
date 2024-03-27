@@ -4,6 +4,14 @@
     {
         #region Attributes
         private static Dictionary<char, string>? morseAD;
+        private string txt;
+        #endregion
+
+        #region Builder
+        public Alfabeto_Morce()
+        {
+            txt = string.Empty;
+        }
         #endregion
 
         #region Private methods
@@ -46,8 +54,20 @@
                 {'6', "-...."},
                 {'7', "--..."},
                 {'8', "---.."},
-                {'9', "----."}
+                {'9', "----."},
+                {'.', ".—.—.—"},
+                {',', "——..——"},
+                {'?', "..——.."},
+                {'\"' , ".—..—."},
+                {'/', "—..—."}
             };
+            
+        }
+
+        private static string VerifyText(string str)
+        {
+            if (!string.IsNullOrEmpty(str)) str = str.ToLower();
+            return str;
         }
         #endregion
     }
