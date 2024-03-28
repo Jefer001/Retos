@@ -11,4 +11,7 @@
  *   https://es.wikipedia.org/wiki/Código_morse.
  */
 
+using MorceCode;
+
+string text = Alfabeto_Morce.VerifyText("Hola mundo");
 Console.WriteLine("Hello, World!");

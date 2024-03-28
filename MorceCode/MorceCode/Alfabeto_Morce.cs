@@ -8,6 +8,13 @@ namespace MorceCode
         private static Dictionary<char, string>? morseAD;
         #endregion
 
+        #region Builder
+        public Alfabeto_Morce()
+        {
+            MorseAlphabetDictionary();
+        }
+        #endregion
+
         #region Private methods
         private static void MorseAlphabetDictionary()
         {
@@ -55,13 +62,6 @@ namespace MorceCode
                 {'\"' , ".—..—."},
                 {'/', "—..—."}
             };
-            
-        }
-
-        private static string VerifyText(string str)
-        {
-            if (!string.IsNullOrEmpty(str)) str = str.ToLower();
-            return str;
         }
 
         private string Encode(string str)
@@ -74,6 +74,14 @@ namespace MorceCode
                 else sb.Append(c + " ");
             }
             return sb.ToString();
+        }
+        #endregion
+
+        #region Public methods
+        public static string VerifyText(string str)
+        {
+            if (!string.IsNullOrEmpty(str)) str = str.ToLower();
+            return str;
         }
         #endregion
     }
