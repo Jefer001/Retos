@@ -82,12 +82,38 @@ namespace MorceCode
         public string Encode(string str)
         {
             string encodeText = string.Empty;
+
             foreach (char c in str)
             {
                 if (morseAD.ContainsKey(c)) encodeText += morseAD[c] + " ";
                 else encodeText += c + " ";
             }
             return encodeText.Trim();
+        }
+
+        public string Decode(string str)
+        {
+            string[] words = str.Split('/');
+            string decodeText = string.Empty;
+
+            foreach(string word in words)
+            {
+                string[] letters = word.Split(' ');
+
+                foreach(string letter in letters)
+                {
+                    foreach (KeyValuePair<char, string> valuePair in morseAD)
+                    {
+                        if (letter.Equals(valuePair.Value))
+                        {
+                            decodeText += valuePair.Key;
+                            break;
+                        }
+                    }
+                }
+                decodeText += " ";
+            }
+            return decodeText.Trim();
         }
         #endregion
     }
