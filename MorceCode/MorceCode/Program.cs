@@ -13,5 +13,6 @@
 
 using MorceCode;
 
-string text = Alfabeto_Morce.VerifyText("Hola mundo");
-Console.WriteLine("Hello, World!");
+Alfabeto_Morce _Morce = new();
+string text = Alfabeto_Morce.VerifyText("Hello, World!");
+if (text != "") Console.WriteLine(_Morce.Encode(text));

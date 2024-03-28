@@ -5,18 +5,11 @@ namespace MorceCode
     public class Alfabeto_Morce
     {
         #region Attributes
-        private static Dictionary<char, string>? morseAD;
+        private readonly Dictionary<char, string>? morseAD;
         #endregion
 
         #region Builder
         public Alfabeto_Morce()
-        {
-            MorseAlphabetDictionary();
-        }
-        #endregion
-
-        #region Private methods
-        private static void MorseAlphabetDictionary()
         {
             morseAD = new Dictionary<char, string>()
             {
@@ -56,24 +49,26 @@ namespace MorceCode
                 {'7', "--..."},
                 {'8', "---.."},
                 {'9', "----."},
-                {'.', ".—.—.—"},
-                {',', "——..——"},
-                {'?', "..——.."},
-                {'\"' , ".—..—."},
-                {'/', "—..—."}
+                {'.', ".-.-.-"},
+                {',', "--..--"},
+                {'?', "..--.."},
+                {'\'', ".----."},
+                {'!', "-.-.--"},
+                {'/', "-..-."},
+                {'(', "-.--."},
+                {')', "-.--.-"},
+                {'&', ".-..."},
+                {':', "---..."},
+                {';', "-.-.-."},
+                {'=', "-...-"},
+                {'+', ".-.-."},
+                {'-', "-....-"},
+                {'_', "..--.-"},
+                {'\"', ".-..-."},
+                {'$', "...-..-"},
+                {'@', ".--.-."},
+                {' ', "/"}
             };
-        }
-
-        private string Encode(string str)
-        {
-            StringBuilder sb = new();
-            foreach (char c in str)
-            {
-                if (morseAD.ContainsKey(c)) sb.Append(morseAD[c] + " ");
-                else if (c == ' ') sb.Append("/ ");
-                else sb.Append(c + " ");
-            }
-            return sb.ToString();
         }
         #endregion
 
@@ -82,6 +77,17 @@ namespace MorceCode
         {
             if (!string.IsNullOrEmpty(str)) str = str.ToLower();
             return str;
+        }
+
+        public string Encode(string str)
+        {
+            string encodeText = string.Empty;
+            foreach (char c in str)
+            {
+                if (morseAD.ContainsKey(c)) encodeText += morseAD[c] + " ";
+                else encodeText += c + " ";
+            }
+            return encodeText.Trim();
         }
         #endregion
     }
