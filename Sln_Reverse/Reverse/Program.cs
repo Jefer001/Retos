@@ -7,4 +7,4 @@ using Reverse;
  * - Si le pasamos "Hola mundo" nos retornaría "odnum aloH"
  */
 
-Console.WriteLine(Methods.Reverse("This is an example.."));
+Console.WriteLine(Methods.Reverse("Hola mundo!!!"));
